@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Profilo Utente</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Profilo di <%= user.username %>
+        </h2>
+
+        <% if (user.profile_image) { %>
+            <img src="/uploads/<%= user.profile_image %>" alt="Immagine Profilo" class="profile-image">
+            <% } %>
+
+                <!-- Sezione per la creazione di un nuovo post -->
+                <h3>Crea un Nuovo Post</h3>
+                <form action="/create-post/<%= user.id %>" method="POST">
+                    <div class="form-group">
+                        <label for="content">Contenuto del Post</label>
+                        <textarea id="content" name="content" rows="4" cols="50" placeholder="Scrivi il tuo post qui..."
+                            required></textarea>
+                    </div>
+                    <button type="submit">Pubblica Post</button>
+                </form>
+
+                <h3>I tuoi Post</h3>
+                <div class="posts">
+                    <% if (posts.length> 0) { %>
+                        <% posts.forEach(post=> { %>
+                            <div class="post">
+                                <h4>
+                                    <%= post.title %>
+                                </h4>
+                                <p>
+                                    <%= post.content %>
+                                </p>
+                                <p><em>Creato il: <%= new Date(post.created_at).toLocaleString() %></em></p>
+                            </div>
+                            <% }); %>
+                                <% } else { %>
+                                    <p>Non hai ancora postato nulla.</p>
+                                    <% } %>
+                </div>
+
+                <!-- Sezione per aggiornare il profilo -->
+                <h3>Aggiorna il tuo Profilo</h3>
+                <form action="/update-profile/<%= user.id %>" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="username">Nome Utente</label>
+                        <input type="text" id="username" name="username" value="<%= user.username %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile_image">Carica Nuova Immagine Profilo</label>
+                        <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                    </div>
+                    <button type="submit">Aggiorna Profilo</button>
+                </form>
+
+                <!-- Sezione per cancellare l'account -->
+                <form action="/delete-account/<%= user.id %>" method="POST">
+                    <button type="submit" class="delete-button">Cancella Account</button>
+                </form>
+
+                <!-- Bottone per tornare alla Home e registrazione -->
+                <div class="button-container">                    
+                    <a href="/register" class="button register-button">Torna alla Home</a>
+                    <a href="/logout" class="button loguot-button">Esci</a>
+                </div>
+
+    </div>
+</body>
+
+</html>

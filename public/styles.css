@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    /* Cambia la direzione per permettere un layout verticale */
+    align-items: center;
+    /* Allinea il contenuto al centro */
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    /* Mantieni la larghezza per il contenuto */
+    margin-top: 20px;
+    /* Aggiungi margine superiore per distanziare dalla header */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button,
+a.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    /* Rimuove il sottolineato per i link che sembrano bottoni */
+    margin: 0.5rem 0;
+    /* Spazio tra i bottoni */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+    /* Aggiungi un margine superiore per distanziare dalla sezione precedente */
+}
+
+.button {
+    width: 8%;
+    /* Imposta una larghezza che consenta un piccolo spazio tra i bottoni */
+    padding: 8px;
+    /* Riduci il padding per rendere i bottoni più piccoli */
+    font-size: 14px;
+    /* Riduci la dimensione del font per i bottoni */
+    text-align: center;
+    /* Allinea il testo al centro */
+}
+
+.button.register-button {
+    margin-right: 10px;
+    /* Aggiungi un margine sinistro al bottone "Torna alla Registrazione" */
+}
+
+button:hover,
+a.button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Aggiungi questo stile per le immagini del profilo */
+.profile-image {
+    width: 150px;
+    /* Modifica la larghezza secondo necessità */
+    height: auto;
+    /* Mantiene le proporzioni dell'immagine */
+    border-radius: 50%;
+    /* Rende l'immagine circolare */
+    display: block;
+    margin: 20px auto;
+    /* Centra l'immagine orizzontalmente */
+}
+
+.delete-button {
+    background-color: #dc3545;
+    /* Rosso */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    /* Rosso scuro al passaggio del mouse */
+}
+
+
+#header  {
+display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    
+    font-size: 26px;
+    text-align: center;
+    
+    /* Rimuove il sottolineato per i link che sembrano bottoni */
+    margin: 0.5rem 0;
+    /* Spazio tra i bottoni */}
+
